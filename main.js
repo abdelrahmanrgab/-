@@ -68,9 +68,9 @@ const darkModeBtn = document.querySelector(".dark-mode-btn");
 
 let index = 0;
 let ayahs = []; // Store fetched ayahs
-let ayahSrc = []; // Store fetched audio sources
+let ayahSrc = []; // Store fetched audio src
 
-// Fetch all Quranic verses in advance
+// Fetch all 
 const fetchAllAyahs = async () => {
   for (let i = 0; i < lists.length; i++) {
     const response = await fetch(
@@ -78,7 +78,7 @@ const fetchAllAyahs = async () => {
     );
     const data = await response.json();
     ayahs.push(data.data.text);
-    ayahSrc.push(data.data.audio); // Add audio source to the array
+    ayahSrc.push(data.data.audio); 
   }
 };
 
@@ -89,7 +89,7 @@ const displayAyah = () => {
   ayahNumSpan.textContent = `ايه (${lists[index].ayahnum})`;
   audio.src = ayahSrc[index]; // Set audio source
 };
-// Move to the previous ayah
+//  to previous ayah
 const leftMove = () => {
   audioBtn.classList.remove("fa-pause");
   audioBtn.classList.add("fa-play");
@@ -103,7 +103,7 @@ const leftMove = () => {
   displayAyah();
 };
 
-// Move to the next ayah
+//  to next ayah
 const rightMove = () => {
   audioBtn.classList.remove("fa-pause");
   audioBtn.classList.add("fa-play");
@@ -129,12 +129,10 @@ const toggleDarkMode = () => {
   }
 };
 
-// Event listeners
 leftBtn.addEventListener("click", leftMove);
 rightBtn.addEventListener("click", rightMove);
 darkModeBtn.addEventListener("click", toggleDarkMode);
 
-// Initial load
 window.addEventListener("load", async () => {
   if (localStorage["mode"] === "dark") {
     document.body.classList.add("dark");
@@ -143,12 +141,11 @@ window.addEventListener("load", async () => {
   displayAyah();
 });
 
-// play and pause audio
+// audio
 var audio = document.getElementById("myAudio");
 var isPlaying = false;
 var audioBtn = document.getElementById("audioBtn");
 
-// Event listener for playing and pausing audio
 audioBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
@@ -163,7 +160,6 @@ audioBtn.addEventListener("click", () => {
   }
 });
 
-// Event listener for resetting the play button when audio ends
 audio.onended = function () {
   isPlaying = false;
   audioBtn.classList.remove("fa-pause");
