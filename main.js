@@ -93,6 +93,7 @@ const displayAyah = () => {
 const leftMove = () => {
   audioBtn.classList.remove("fa-pause");
   audioBtn.classList.add("fa-play");
+  isPlaying = false;
   if (index > 0) {
     index--;
     rightBtn.style.opacity = 1;
@@ -106,6 +107,8 @@ const leftMove = () => {
 const rightMove = () => {
   audioBtn.classList.remove("fa-pause");
   audioBtn.classList.add("fa-play");
+  isPlaying = false;
+
   if (index < lists.length - 1) {
     index++;
     leftBtn.style.opacity = 1;
@@ -161,7 +164,7 @@ audioBtn.addEventListener("click", () => {
 });
 
 // Event listener for resetting the play button when audio ends
-audio.onended = function() {
+audio.onended = function () {
   isPlaying = false;
   audioBtn.classList.remove("fa-pause");
   audioBtn.classList.add("fa-play");
