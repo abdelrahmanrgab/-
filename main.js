@@ -85,8 +85,8 @@ const fetchAllAyahs = async () => {
 // Display current ayah
 const displayAyah = () => {
   content.textContent = ayahs[index];
-  souraNameSpan.textContent = `سوره ${lists[index].name}`;
-  ayahNumSpan.textContent = `ايه (${lists[index].ayahnum})`;
+  souraNameSpan.textContent = `سورة ${lists[index].name}`;
+  ayahNumSpan.textContent = `اية (${lists[index].ayahnum})`;
   audio.src = ayahSrc[index]; // Set audio source
 };
 //  to previous ayah
