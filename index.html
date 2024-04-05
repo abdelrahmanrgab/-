@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - أدعية من القرأن الكريم (audio)</title>
+  <link rel="canonical" href="https://codepen.io/Abdelrahman-Ragab/pen/PogQKXJ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>أدعية من القرأن الكريم</h1>
+  <div class="container cards active">
+    <span class="fas fa-chevron-left nav-btn" id="left-btn"></span>
+    <span class="card">
+      <span class="content">
+      </span>
+      <span class="details">
+        <span class="soura_name">
+        </span>
+        <span class="ayah_num">
+        </span>
+      </span>
+    </span>
+    <span class="fas fa-chevron-right nav-btn" id="right-btn"></span>
+  </div>
+  <div class="btns-container">
+    <span class="dark-mode-btn btns fas fa-moon"></span>
+    <span id="audioBtn" class="fas fa-play btns"></span>
+  </div>
+  <!-- for audio-->
+  <audio id="myAudio"></audio>
+  <script src="main.js"></script>
+</body>
+
+</html>
